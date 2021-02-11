@@ -19,8 +19,8 @@ const Home = () => {
       <Helmet>
         <title>Home | MovieQL</title>
       </Helmet>
-      {loading && "Loading"}
-      {error && "Something is wrong"}
+      {loading && "Loading..."}
+      {error && "Something is wrong..."}
       {!loading &&
         data &&
         data.movies &&

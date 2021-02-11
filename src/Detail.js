@@ -1,5 +1,4 @@
 import React from "react";
-import { Query } from "react-apollo";
 import { MOVIE_DETAILS } from "./queries";
 import { Helmet } from "react-helmet";
 import Movie from "./Movie";
@@ -44,8 +43,9 @@ const Detail = ({
     params: { movieId }
   }
 }) => {
+  let mid = movieId*1;
   const { loading, error, data } = useQuery(MOVIE_DETAILS, {
-    variables: { movieId }
+    variables: { movieId:mid }
   });
   if (loading)
     return (

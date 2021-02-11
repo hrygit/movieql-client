@@ -5,6 +5,7 @@ import { ApolloProvider as ApolloHooksProvider } from "react-apollo-hooks";
 import client from "./apolloClient";
 import Home from "./Home";
 import Detail from "./Detail";
+import Atable from "./Atable";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <main>
               <Route exact={true} path={"/"} component={Home} />
               <Route path={"/details/:movieId"} component={Detail} />
+              <Route path={"/atable/"} component={Atable} />
             </main>
           </Router>
         </ApolloHooksProvider>

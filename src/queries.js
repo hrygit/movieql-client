@@ -12,7 +12,8 @@ export const HOME_PAGE = gql`
 `;
 
 export const MOVIE_DETAILS = gql`
-  query getMovieDetails($movieId: Int!) {
+  query getMovieDetails($movieId: Int!) 
+  {
     movie(id: $movieId) {
       medium_cover_image
       title
@@ -26,6 +27,15 @@ export const MOVIE_DETAILS = gql`
       title
       rating
       medium_cover_image
+    }
+  }
+`;
+
+export const ATABLES = gql`
+  {
+    atable_all(col:1) {
+      col1
+      col2
     }
   }
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Atable from "./Atable";
 
 const Card = styled.div`
   border-radius: 15px;
@@ -28,14 +29,35 @@ const Title = styled.span`
   margin: auto;
 `;
 
+const Footer = styled.span`
+  background-color: white;
+  width: auto;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  bottom: 25px;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+`;
 const Movie = ({ id, title, rating, poster }) => (
-  <Link to={`/details/${id}`}>
+  <div>
     <Card background={poster}>
-      <Title>
-        {title} / {rating}⭐️
-      </Title>
+      <Link to={`/details/${id}`}>
+          <Title>
+            {title} / {rating}⭐️
+          </Title>
+      </Link>      
+      <Link to={'/atable/'}>
+        <Footer>
+          ⭐️ atable ⭐️
+        </Footer>
+      </Link>
+      <Atable>
+        ⭐️ atable ⭐️
+      </Atable>
     </Card>
-  </Link>
+  </div>
 );
 
 Movie.propTypes = {
